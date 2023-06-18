@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/nanopack/pulse/kapacitor"
+	"github.com/mu-box/pulse/kapacitor"
 )
 
 // add or update a kapacitor task

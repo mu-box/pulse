@@ -7,7 +7,7 @@ import (
 
 	"github.com/spf13/viper"
 
-	"github.com/nanopack/pulse/kapacitor"
+	"github.com/mu-box/pulse/kapacitor"
 )
 
 var (

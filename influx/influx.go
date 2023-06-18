@@ -12,7 +12,7 @@ import (
 	"github.com/jcelliott/lumber"
 	"github.com/spf13/viper"
 
-	"github.com/nanopack/pulse/plexer"
+	"github.com/mu-box/pulse/plexer"
 )
 
 var clientConn client.Client

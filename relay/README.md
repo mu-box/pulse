@@ -1,5 +1,5 @@
-[![pulse logo](http://nano-assets.gopagoda.io/readme-headers/pulse.png)](http://nanobox.io/open-source#pulse)   
-[![Build Status](https://travis-ci.org/nanopack/pulse.svg)](https://travis-ci.org/nanopack/pulse)
+[![pulse logo](http://microbox.rocks/assets/readme-headers/pulse.png)](http://microbox.cloud/open-source#pulse)
+[![Build Status](https://github.com/mu-box/pulse/actions/workflows/ci.yaml/badge.svg)](https://github.com/mu-box/pulse/actions)
 
 # Pulse
 
@@ -21,7 +21,7 @@ import (
   // if we want to see pulse client logs
   "github.com/jcelliott/lumber"
 
-  pulse "github.com/nanopack/pulse/relay"
+  pulse "github.com/mu-box/pulse/relay"
 )
 
 // address of pulse server
@@ -71,4 +71,4 @@ func main() {
 }
 ```
 
-[![open source](http://nano-assets.gopagoda.io/open-src/nanobox-open-src.png)](http://nanobox.io/open-source)
+[![open source](http://microbox.rocks/assets/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)

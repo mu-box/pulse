@@ -9,8 +9,8 @@ import (
 
 	"github.com/spf13/viper"
 
-	"github.com/nanopack/pulse/influx"
-	"github.com/nanopack/pulse/plexer"
+	"github.com/mu-box/pulse/influx"
+	"github.com/mu-box/pulse/plexer"
 )
 
 func TestMain(m *testing.M) {

@@ -1,33 +1,33 @@
 // Pulse is a stat collecting and publishing service. It serves historical
 // stats over an http api while live stats are sent to mist for live updates.
 //
-// Usage
+// # Usage
 //
 // To start pulse as a server, simply run (with influx running locally):
 //
-//  pulse -s
+//	pulse -s
 //
 // For more specific usage information, refer to the help doc `pulse -h`:
-//  Usage:
-//    pulse [flags]
 //
-//  Flags:
-//    -a, --aggregate-interval int         Interval at which stats are aggregated (default 15)
-//    -c, --config-file string              Config file location for server
-//    -C, --cors-allow string              Sets the 'Access-Control-Allow-Origin' header (default "*")
-//    -H, --http-listen-address string     Http listen address (default "127.0.0.1:8080")
-//    -i, --influx-address string          InfluxDB server address (default "http://127.0.0.1:8086")
-//    -I, --insecure                       Run insecure (default true)
-//    -k, --kapacitor-address string       Kapacitor server address (http://127.0.0.1:9092)
-//    -l, --log-level string               Level at which to log (default "INFO")
-//    -m, --mist-address string            Mist server address
-//    -M, --mist-token string              Mist server token
-//    -p, --poll-interval int              Interval to request stats from clients (default 60)
-//    -s, --server                         Run as server
-//    -S, --server-listen-address string   Server listen address (default "127.0.0.1:3000")
-//    -t, --token string                   Security token (recommend placing in config file) (default "secret")
-//    -v, --version                        Print version info and exit
+//	Usage:
+//	  pulse [flags]
 //
+//	Flags:
+//	  -a, --aggregate-interval int         Interval at which stats are aggregated (default 15)
+//	  -c, --config-file string              Config file location for server
+//	  -C, --cors-allow string              Sets the 'Access-Control-Allow-Origin' header (default "*")
+//	  -H, --http-listen-address string     Http listen address (default "127.0.0.1:8080")
+//	  -i, --influx-address string          InfluxDB server address (default "http://127.0.0.1:8086")
+//	  -I, --insecure                       Run insecure (default true)
+//	  -k, --kapacitor-address string       Kapacitor server address (http://127.0.0.1:9092)
+//	  -l, --log-level string               Level at which to log (default "INFO")
+//	  -m, --mist-address string            Mist server address
+//	  -M, --mist-token string              Mist server token
+//	  -p, --poll-interval int              Interval to request stats from clients (default 60)
+//	  -s, --server                         Run as server
+//	  -S, --server-listen-address string   Server listen address (default "127.0.0.1:3000")
+//	  -t, --token string                   Security token (recommend placing in config file) (default "secret")
+//	  -v, --version                        Print version info and exit
 package main
 
 import (
@@ -35,15 +35,15 @@ import (
 	"time"
 
 	"github.com/jcelliott/lumber"
-	mist "github.com/nanopack/mist/clients"
+	mist "github.com/mu-box/mist/clients"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/nanopack/pulse/api"
-	"github.com/nanopack/pulse/influx"
-	"github.com/nanopack/pulse/kapacitor"
-	"github.com/nanopack/pulse/plexer"
-	pulse "github.com/nanopack/pulse/server"
+	"github.com/mu-box/pulse/api"
+	"github.com/mu-box/pulse/influx"
+	"github.com/mu-box/pulse/kapacitor"
+	"github.com/mu-box/pulse/plexer"
+	pulse "github.com/mu-box/pulse/server"
 )
 
 var (

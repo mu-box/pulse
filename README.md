@@ -1,14 +1,14 @@
 # Pulse
 
-[![Build Status](https://travis-ci.org/nanopack/pulse.svg)](https://travis-ci.org/nanopack/pulse)
-[![GoDoc](https://godoc.org/github.com/nanopack/pulse?status.svg)](https://godoc.org/github.com/nanopack/pulse)
+[![Build Status](https://github.com/mu-box/pulse/actions/workflows/ci.yaml/badge.svg)](https://github.com/mu-box/pulse/actions)
+[![GoDoc](https://godoc.org/github.com/mu-box/pulse?status.svg)](https://godoc.org/github.com/mu-box/pulse)
 
 Pulse is a stat collecting and publishing service. It serves historical stats over an http api while live stats are sent to mist for live updates.
 
 
 ## Usage
 
-Simply running `pulse -s` will start pulse with the default config options.  
+Simply running `pulse -s` will start pulse with the default config options.
 `pulse -h` or `pulse --help` will show more detailed usage and config options:
 
 ```
@@ -67,7 +67,7 @@ Flags:
 | **GET** /hourly/{stat}** | Returns hourly averages for stat | json array of stat objects |
 | **GET** /daily/{stat}** | Returns average for stat at the same daily time | string map |
 
-**ALERTS** (requires "kapacitor-address" to be configured)  
+**ALERTS** (requires "kapacitor-address" to be configured)
 
 | Route | Description | Payload | Output |
 | --- | --- | --- | --- |
@@ -75,10 +75,10 @@ Flags:
 | **PUT** /alerts | Update a kapacitor alert | json alert object | json alert object |
 | **DELETE** /alerts/{alert} | Delete a kapacitor alert | nil | success message |
 
-`*`: reserved query parameters is 'verb', all others act as filters  
-`**`: reserved query parameters are 'backfill', 'verb', 'start', and 'stop', all others act as filters  
+`*`: reserved query parameters is 'verb', all others act as filters
+`**`: reserved query parameters are 'backfill', 'verb', 'start', and 'stop', all others act as filters
 
-**note:** The API requires a token to be passed for authentication by default and is configurable at server start (`--token`). The token is passed in as a custom header: `X-AUTH-TOKEN`.  
+**note:** The API requires a token to be passed for authentication by default and is configurable at server start (`--token`). The token is passed in as a custom header: `X-AUTH-TOKEN`.
 
 For examples, see [the api's readme](api/README.md).
 
@@ -121,7 +121,7 @@ Fields:
 
 ## Relay
 
-A pulse relay is a service that connects to pulse and advertises stats that are available for collection. A relay implementation is available in the pulse project and can be embedded in other projects.  
+A pulse relay is a service that connects to pulse and advertises stats that are available for collection. A relay implementation is available in the pulse project and can be embedded in other projects.
 
 For an [**example**](relay/README.md), look in the README for relay.
 
@@ -149,12 +149,12 @@ The TCP api used to communicate between the pulse server and a relay is simple a
 
 ## Contributing
 
-Contributions to the pulse project are welcome and encouraged. Pulse is a [Nanobox](https://nanobox.io) project and contributions should follow the [Nanobox Contribution Process & Guidelines](https://docs.nanobox.io/contributing/).
+Contributions to the pulse project are welcome and encouraged. Pulse is a [Microbox](https://microbox.cloud) project and contributions should follow the [Microbox Contribution Process & Guidelines](https://docs.microbox.cloud/contributing/).
 
 #### TODO
 
 ## Licence
 
-Mozilla Public License Version 2.0
+This project is released under [The MIT License](http://opensource.org/licenses/MIT).
 
-[![open source](http://nano-assets.gopagoda.io/open-src/nanobox-open-src.png)](http://nanobox.io/open-source)
+[![open source](http://microbox.rocks/assets/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)

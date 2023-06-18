@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nanopack/pulse/plexer"
-	"github.com/nanopack/pulse/relay"
-	"github.com/nanopack/pulse/server"
+	"github.com/mu-box/pulse/plexer"
+	"github.com/mu-box/pulse/relay"
+	"github.com/mu-box/pulse/server"
 )
 
 var serverAddr = "127.0.0.1:9899"

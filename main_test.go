@@ -10,9 +10,9 @@ import (
 
 	"github.com/jcelliott/lumber"
 
-	"github.com/nanopack/pulse/plexer"
-	pulse "github.com/nanopack/pulse/relay"
-	"github.com/nanopack/pulse/server"
+	"github.com/mu-box/pulse/plexer"
+	pulse "github.com/mu-box/pulse/relay"
+	"github.com/mu-box/pulse/server"
 )
 
 var address = "127.0.0.1:8043"

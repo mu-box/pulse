@@ -12,8 +12,8 @@ import (
 
 	"github.com/spf13/viper"
 
-	"github.com/nanopack/pulse/api"
-	"github.com/nanopack/pulse/kapacitor"
+	"github.com/mu-box/pulse/api"
+	"github.com/mu-box/pulse/kapacitor"
 )
 
 var apiAddr = "0.0.0.0:9898"

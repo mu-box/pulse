@@ -12,7 +12,7 @@ import (
 	"github.com/jcelliott/lumber"
 	"github.com/spf13/viper"
 
-	"github.com/nanopack/pulse/influx"
+	"github.com/mu-box/pulse/influx"
 )
 
 type (
@@ -172,7 +172,7 @@ func latestStat(res http.ResponseWriter, req *http.Request) {
 
 	// if there are multiple values (if a filter was applies more than 1x)
 	if len(records.Results[0].Series[0].Values) > 1 {
-		// create the master result map (will have key, val)
+		// create the primary result map (will have key, val)
 		resulto := make([]map[string]interface{}, 0)
 
 		// loop through the values ([][]interface{})
@@ -199,7 +199,7 @@ func latestStat(res http.ResponseWriter, req *http.Request) {
 				// assign value to column name
 				tRes[records.Results[0].Series[0].Columns[i]] = val[i]
 			}
-			// append temp result to master result map
+			// append temp result to primary result map
 			resulto = append(resulto, tRes)
 		}
 

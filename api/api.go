@@ -1,7 +1,3 @@
-// Copyright (C) Pagoda Box, Inc - All Rights Reserved
-// Unauthorized copying of this file, via any medium is strictly prohibited
-// Proprietary and confidential
-
 // Package api provides a restful interface to view aggregated stats as well as manage alerts.
 package api
 
@@ -14,7 +10,7 @@ import (
 
 	"github.com/gorilla/pat"
 	"github.com/jcelliott/lumber"
-	"github.com/nanobox-io/golang-nanoauth"
+	microauth "github.com/mu-box/golang-microauth"
 	"github.com/spf13/viper"
 )
 
@@ -41,15 +37,15 @@ func Start() error {
 		return err
 	}
 
-	nanoauth.DefaultAuth.Header = "X-AUTH-TOKEN"
+	microauth.DefaultAuth.Header = "X-AUTH-TOKEN"
 
 	// blocking...
 	if viper.GetBool("insecure") {
 		lumber.Info("[PULSE :: API] Listening at 'http://%s'...\n", viper.GetString("http-listen-address"))
-		return nanoauth.ListenAndServe(viper.GetString("http-listen-address"), viper.GetString("token"), routes)
+		return microauth.ListenAndServe(viper.GetString("http-listen-address"), viper.GetString("token"), routes)
 	}
 	lumber.Info("[PULSE :: API] Listening at 'https://%s'...\n", viper.GetString("http-listen-address"))
-	return nanoauth.ListenAndServeTLS(viper.GetString("http-listen-address"), viper.GetString("token"), routes)
+	return microauth.ListenAndServeTLS(viper.GetString("http-listen-address"), viper.GetString("token"), routes)
 }
 
 // registerRoutes

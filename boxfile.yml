@@ -1,10 +1,10 @@
 run.config:
   engine: 'golang'
   engine.config:
-    package: 'github.com/nanopack/pulse'
+    package: 'github.com/mu-box/pulse'
 
 data.influx:
-  image: nanobox/influxdb
+  image: mubox/influxdb
 
 web.pulse:
   start: '/app/pulse -s -k http://${DATA_INFLUX_HOST}:9092 -i http://${DATA_INFLUX_HOST}:8086 -H :8080 -S :3000 -p 30 -l debug'
